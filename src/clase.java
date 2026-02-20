@@ -5,6 +5,8 @@ public class Clase extends JFrame {
 
     String[] opciones = { "50000", "20000", "10000", "5000", "2000", "1000", "500", "200", "100", "50" };
     String[] encabe = { "cantidad", "presentacion", "denominacion" };
+    int[] existencias = {0,0,0,0,0,0,0,0,0,0};
+    int [] devuelta = {0,0,0,0,0,0,0,0,0,0};
     private JTextField txtCantidad, txtexi;
     private JComboBox cmbRespuesta;
     JTable tblplata;

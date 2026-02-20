@@ -1,29 +1,63 @@
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JList;
-import javax.swing.JOptionPane;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import javax.swing.JTextArea;
+import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
+public class Clase extends JFrame {
 
+    String[] opciones = { "50000", "20000", "10000", "5000", "2000", "1000", "500", "200", "100", "50" };
+    String[] encabe = { "cantidad", "presentacion", "denominacion" };
+    private JTextField txtCantidad, txtexi;
+    private JComboBox cmbRespuesta;
+    JTable tblplata;
 
-public class Clase extends JFrame{
+    public Clase() {
 
-
-
-    public Clase(){
-
-        setTitle("Distribución de frecuencias");
+        setTitle("Caja Registradora");
         setSize(500, 500);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         setLayout(null);
-        
+
+        JLabel lblPregunta = new JLabel("Denominacion:");
+        lblPregunta.setBounds(100, 50, 100, 20);
+        add(lblPregunta);
+
+
+        cmbRespuesta = new JComboBox();
+        cmbRespuesta.setBounds(200, 50, 100, 25);
+        add(cmbRespuesta);
+        cmbRespuesta.setModel(new DefaultComboBoxModel(opciones));
+
+        JButton btnAgregar = new JButton("actualizar existencias");
+        btnAgregar.setBounds(90, 100, 100, 25);
+        add(btnAgregar);
+
+        txtexi = new JTextField();
+        txtexi.setBounds(200, 100, 100, 25);
+        add(txtexi);
+
+
+        JLabel lblde = new JLabel("valor a devolver:");
+        lblde.setBounds(50, 150, 100, 20);
+        add(lblde);
+
+
+       JButton btnde = new JButton("Devolver");
+        btnde.setBounds(270, 150, 100, 25);
+        add(btnde);
+
+        txtCantidad = new JTextField();
+        txtCantidad.setBounds(150, 150, 100, 25);
+        add(txtCantidad);
+
+
+        tblplata = new JTable();
+        JScrollPane spplata = new JScrollPane(tblplata);
+        spplata.setBounds(10, 230, 470, 200);
+        add(spplata);
+
+
+        DefaultTableModel modelo = new DefaultTableModel(null, encabe);
+        tblplata.setModel(modelo);
     }
 
 }
